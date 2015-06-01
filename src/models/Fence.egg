@@ -1,0 +1,60 @@
+<CoordinateSystem> { Y-Up }
+
+<Comment> {
+  "maya2egg2008 -a model Fence.mb Fence.egg"
+}
+<Texture> phong8SG {
+  Fence01.jpg
+  <Scalar> alpha-file { Fence01_opacity.jpg }
+  <Scalar> format { rgba }
+  <Scalar> wrapu { repeat }
+  <Scalar> wrapv { repeat }
+  <Scalar> minfilter { linear_mipmap_linear }
+  <Scalar> magfilter { linear }
+  <Scalar> envtype { modulate }
+  <Transform> {
+    <Matrix3> {
+      8 0 0
+      0 1 0
+      0 0 1
+    }
+  }
+}
+<Group> Fence {
+  <Dart> { 1 }
+  <Group> groundPlane_transform {
+  }
+  <Group> pPlane250 {
+    <VertexPool> pPlaneShape250.verts {
+      <Vertex> 0 {
+        -15.7888 -0.00065727 7.42309
+        <UV> { 0 0 }
+        <Normal> { 0 0 1 }
+        <RGBA> { 1 1 1 1 }
+      }
+      <Vertex> 1 {
+        15.7888 -0.00065727 7.42309
+        <UV> { 1 0 }
+        <Normal> { 0 0 1 }
+        <RGBA> { 1 1 1 1 }
+      }
+      <Vertex> 2 {
+        15.7888 0.999343 7.42309
+        <UV> { 1 1 }
+        <Normal> { 0 0 1 }
+        <RGBA> { 1 1 1 1 }
+      }
+      <Vertex> 3 {
+        -15.7888 0.999343 7.42309
+        <UV> { 0 1 }
+        <Normal> { 0 0 1 }
+        <RGBA> { 1 1 1 1 }
+      }
+    }
+    <Polygon> {
+      <Normal> { 0 0 1 }
+      <TRef> { phong8SG }
+      <VertexRef> { 0 1 2 3 <Ref> { pPlaneShape250.verts } }
+    }
+  }
+}
